@@ -1,0 +1,40 @@
+{
+    "name": "ifrc-go-icons",
+    "version": "1.0.0",
+    "description": "IFRC-GO icons library",
+    "keywords": [
+        "ifrc-go",
+        "icons"
+    ],
+    "homepage": "https://github.com/IFRCGo/go-icons#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/IFRCGo/go-icons.git"
+    },
+    "license": "MIT",
+    "files": [
+        "/dist"
+    ],
+    "sideEffects": false,
+    "exports": {
+        "import": "./dist/esm/index.js",
+        "require": "./dist/index.js",
+        "types": "./dist/*.d.ts"
+    },
+    "scripts": {
+        "build": "rimraf ./dist && node ./scripts/build.js"
+    },
+    "peerDependencies": {
+        "react": ">= 16"
+    },
+    "devDependencies": {
+        "@svgr/core": "^7.0.0",
+        "@svgr/plugin-jsx": "^7.0.0",
+        "@svgr/plugin-svgo": "^7.0.0",
+        "eslint": "^7.32.0 || ^8.2.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.25.2",
+        "rimraf": "^5.0.0",
+        "svgo": "^3.0.2"
+    }
+}
