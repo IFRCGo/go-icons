@@ -1,10 +1,11 @@
 {
     "name": "ifrc-go-icons",
     "version": "1.0.0",
-    "description": "IFRC-GO icons library",
+    "description": "IFRC-GO icons library for React.",
     "keywords": [
         "ifrc-go",
-        "icons"
+        "icons",
+        "react"
     ],
     "homepage": "https://github.com/IFRCGo/go-icons#readme",
     "repository": {
