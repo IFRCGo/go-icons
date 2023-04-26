@@ -5,6 +5,8 @@ const camelcase = require('camelcase');
 const { rimraf } = require('rimraf');
 const { transform } = require('@svgr/core');
 const { dirname } = require('path');
+const babel = require('@babel/core');
+const babelPluginTransformJxs = require('@babel/plugin-transform-react-jsx');
 
 const getReactComponent = async (svg, componentName, format) => {
   const component = await transform(
@@ -17,11 +19,15 @@ const getReactComponent = async (svg, componentName, format) => {
     { componentName },
   );
 
+  const { code } = await babel.transformAsync(component, {
+    plugins: [[babelPluginTransformJxs, { useBuiltIns: true }]],
+  });
+
   if (format === 'esm') {
-    return component;
+    return code;
   }
 
-  return component
+  return code
     .replace('import * as React from "react"', 'const React = require("react")')
     .replace('export default', 'module.exports =');
 };
