@@ -12,6 +12,10 @@
         "type": "git",
         "url": "https://github.com/IFRCGo/go-icons.git"
     },
+    "bugs": {
+        "url": "https://github.com/IFRCGo/go-icons/issues"
+    },
+    "author": "samshara <sameerai2736@gmail.com",
     "license": "MIT",
     "files": [
         "/dist"
@@ -23,12 +27,15 @@
         "types": "./dist/*.d.ts"
     },
     "scripts": {
+        "prepack": "npm run build",
         "build": "rimraf ./dist && node ./scripts/build.js"
     },
     "peerDependencies": {
         "react": ">= 16"
     },
     "devDependencies": {
+        "@babel/core": "^7.21.4",
+        "@babel/plugin-transform-react-jsx": "^7.21.0",
         "@svgr/core": "^7.0.0",
         "@svgr/plugin-jsx": "^7.0.0",
         "@svgr/plugin-svgo": "^7.0.0",
