@@ -1,12 +1,15 @@
 module.exports = {
   plugins: [
-    'preset-default',
-    'removeDimensions',
-    'removeXMLNS',
+    {
+      name: 'preset-default',
+    },
+    {
+      name: 'removeDimensions',
+    },
     {
       name: 'removeAttrs',
       params: {
-        attrs: '(fill|stroke)',
+        attrs: '(stroke|fill)',
       },
     },
     {
@@ -14,7 +17,7 @@ module.exports = {
       params: {
         attributes: [
           {
-            stroke: 'currentColor',
+            'aria-hidden': true,
           },
           {
             fill: 'currentColor',
