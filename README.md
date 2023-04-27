@@ -3,9 +3,9 @@ React icons for [IFRC-GO](https://github.com/IFRCGo/) project.
 
 ## Installation
 ```sh
-yarn add ifrc-go-icons
+yarn add @ifrc-go/icons
 #or
-npm install ifrc-go-icons
+npm install @ifrc-go/icons
 ```
 
 ## Usage
