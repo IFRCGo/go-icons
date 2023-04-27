@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "lib": [
+            "es6"
+        ],
+        "skipLibCheck": true,
+        "allowJs": true,
+        "outDir": "build",
+        "strict": true,
+        "noImplicitAny": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+    },
+    "files": [
+        "./scripts/build.ts"
+    ]
+}
