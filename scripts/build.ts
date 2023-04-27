@@ -4,15 +4,15 @@ import camelcase from 'camelcase';
 import { rimraf } from 'rimraf';
 import { transform } from '@svgr/core';
 import { dirname } from 'path';
-import { transformAsync} from '@babel/core';
+import { transformAsync } from '@babel/core';
 
 type Format = 'esm' | 'cjs';
 interface Icon {
-    svg: string;
-    componentName: string;
+  svg: string;
+  componentName: string;
 }
 
-const getReactComponent = async (svg:string, componentName:string, format:Format) => {
+const getReactComponent = async (svg: string, componentName: string, format: Format) => {
   const component = await transform(
     svg,
     {
@@ -32,8 +32,8 @@ const getReactComponent = async (svg:string, componentName:string, format:Format
 
   if (result?.code) {
     return result.code
-    .replace('import * as React from "react"', 'const React = require("react")')
-    .replace('export default', 'module.exports =') ?? '';
+      .replace('import * as React from "react"', 'const React = require("react")')
+      .replace('export default', 'module.exports =') ?? '';
   }
 };
 
@@ -49,7 +49,7 @@ async function getIcons() {
   );
 }
 
-function exportAll(icons: Icon[], format:Format, includeExtension = true) {
+function exportAll(icons: Icon[], format: Format, includeExtension = true) {
   return icons
     .map(({ componentName }) => {
       const extension = includeExtension ? '.js' : '';
@@ -61,12 +61,12 @@ function exportAll(icons: Icon[], format:Format, includeExtension = true) {
     .join('\n');
 }
 
-async function ensureWrite(file:string, text: string) {
+async function ensureWrite(file: string, text: string) {
   await fs.mkdir(dirname(file), { recursive: true });
   await fs.writeFile(file, text, 'utf8');
 }
 
-async function buildIcons(format:Format) {
+async function buildIcons(format: Format) {
   let outDir = './dist';
   if (format === 'esm') {
     outDir += '/esm';

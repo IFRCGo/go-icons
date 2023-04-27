@@ -28,7 +28,8 @@
     },
     "scripts": {
         "prepack": "yarn build",
-        "build": "rimraf ./dist && rimraf ./build && tsc && node ./build/build.js"
+        "build": "rimraf ./dist && rimraf ./build && tsc && node ./build/build.js",
+        "optimize": "svgo --config=svgo.config.js -f ./fill -o ./fill-optimized --pretty --indent=2"
     },
     "peerDependencies": {
         "react": ">= 16"
