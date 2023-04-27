@@ -1,14 +1,18 @@
 /* eslint-disable no-console */
-/* eslint-disable import/no-extraneous-dependencies */
-const fs = require('fs').promises;
-const camelcase = require('camelcase');
-const { rimraf } = require('rimraf');
-const { transform } = require('@svgr/core');
-const { dirname } = require('path');
-const babel = require('@babel/core');
-const babelPluginTransformJxs = require('@babel/plugin-transform-react-jsx');
+import { promises as fs } from 'fs';
+import camelcase from 'camelcase';
+import { rimraf } from 'rimraf';
+import { transform } from '@svgr/core';
+import { dirname } from 'path';
+import { transformAsync} from '@babel/core';
 
-const getReactComponent = async (svg, componentName, format) => {
+type Format = 'esm' | 'cjs';
+interface Icon {
+    svg: string;
+    componentName: string;
+}
+
+const getReactComponent = async (svg:string, componentName:string, format:Format) => {
   const component = await transform(
     svg,
     {
@@ -19,17 +23,18 @@ const getReactComponent = async (svg, componentName, format) => {
     { componentName },
   );
 
-  const { code } = await babel.transformAsync(component, {
-    plugins: [[babelPluginTransformJxs, { useBuiltIns: true }]],
+  const result = await transformAsync(component, {
+    plugins: [['@babel/plugin-transform-react-jsx', { useBuiltIns: true }]],
   });
-
-  if (format === 'esm') {
-    return code;
+  if (format === 'esm' && result?.code) {
+    return result.code;
   }
 
-  return code
+  if (result?.code) {
+    return result.code
     .replace('import * as React from "react"', 'const React = require("react")')
-    .replace('export default', 'module.exports =');
+    .replace('export default', 'module.exports =') ?? '';
+  }
 };
 
 async function getIcons() {
@@ -44,7 +49,7 @@ async function getIcons() {
   );
 }
 
-function exportAll(icons, format, includeExtension = true) {
+function exportAll(icons: Icon[], format:Format, includeExtension = true) {
   return icons
     .map(({ componentName }) => {
       const extension = includeExtension ? '.js' : '';
@@ -56,12 +61,12 @@ function exportAll(icons, format, includeExtension = true) {
     .join('\n');
 }
 
-async function ensureWrite(file, text) {
+async function ensureWrite(file:string, text: string) {
   await fs.mkdir(dirname(file), { recursive: true });
   await fs.writeFile(file, text, 'utf8');
 }
 
-async function buildIcons(format) {
+async function buildIcons(format:Format) {
   let outDir = './dist';
   if (format === 'esm') {
     outDir += '/esm';
@@ -74,10 +79,12 @@ async function buildIcons(format) {
       const content = await getReactComponent(svg, componentName, format);
       const types = `import * as React from 'react';\ndeclare const ${componentName}: React.ForwardRefExoticComponent<React.PropsWithoutRef<React.SVGProps<SVGSVGElement>> & { title?: string, titleId?: string } & React.RefAttributes<SVGSVGElement>>;\nexport default ${componentName};\n`;
 
-      return [
-        ensureWrite(`${outDir}/${componentName}.js`, content),
-        ...(types ? [ensureWrite(`${outDir}/${componentName}.d.ts`, types)] : []),
-      ];
+      if (content) {
+        return [
+          ensureWrite(`${outDir}/${componentName}.js`, content),
+          ensureWrite(`${outDir}/${componentName}.d.ts`, types),
+        ];
+      }
     }),
   );
 
