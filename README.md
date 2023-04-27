@@ -12,7 +12,7 @@ npm install ifrc-go-icons
 
 Each icon can be imported as a react component.
 ```js
-import { MenuLineIcon } from 'ifrc-go-icons';
+import { MenuLineIcon } from '@ifrc-go/icons';
 
 function MyComponent() {
   return (

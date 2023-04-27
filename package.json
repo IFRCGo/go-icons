@@ -1,5 +1,5 @@
 {
-    "name": "ifrc-go-icons",
+    "name": "@ifrc-go/icons",
     "version": "1.0.0",
     "description": "IFRC-GO icons library for React.",
     "keywords": [
@@ -27,7 +27,7 @@
         "types": "./dist/*.d.ts"
     },
     "scripts": {
-        "prepack": "npm run build",
+        "prepack": "yarn build",
         "build": "rimraf ./dist && node ./scripts/build.js"
     },
     "peerDependencies": {
