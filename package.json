@@ -20,6 +20,7 @@
     "files": [
         "/dist"
     ],
+    "main": "dist/index.js",
     "sideEffects": false,
     "exports": {
         "import": "./dist/esm/index.js",

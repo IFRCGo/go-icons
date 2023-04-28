@@ -1,11 +1,11 @@
-## IFRC-GO Icons
+## IFRC-GO Icons ![npm (scoped)](https://img.shields.io/npm/v/@ifrc-go/icons)
 React icons for [IFRC-GO](https://github.com/IFRCGo/) project.
 
 ## Installation
 ```sh
-yarn add ifrc-go-icons
+yarn add @ifrc-go/icons
 #or
-npm install ifrc-go-icons
+npm install @ifrc-go/icons
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ import { MenuLineIcon } from '@ifrc-go/icons';
 function MyComponent() {
   return (
     <div>
-      <MenuLine className={{ color: #3b82f6 }} />
+      <MenuLineIcon className={{ color: #3b82f6 }} />
     </div>
   )
 }
