@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-  <g clip-path="url(#a)">
-    <path d="m12.36 10.947 5.658 5.656-1.415 1.415-5.656-5.657-4.95 4.95V5.997H17.31l-4.95 4.95Z"/>
-  </g>
-  <defs>
-    <clipPath id="a">
-      <path d="M0 0h24v24H0z"/>
-    </clipPath>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+    <g clip-path="url(#a)">
+        <path d="m12.36 10.947 5.658 5.656-1.415 1.415-5.656-5.657-4.95 4.95V5.997H17.31l-4.95 4.95Z"/>
+    </g>
+    <defs>
+        <clipPath id="a">
+            <path d="M0 0h24v24H0z"/>
+        </clipPath>
+    </defs>
 </svg>
