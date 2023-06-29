@@ -15,5 +15,5 @@
     },
     "files": [
         "./scripts/build.ts"
-    ]
+    ],
 }
