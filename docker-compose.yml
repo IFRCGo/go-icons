@@ -1,0 +1,18 @@
+version: '3.2'
+
+x-page: &base_page_setup
+  image: node:18
+  working_dir: /code/
+  volumes:
+    - ./gh-pages/:/code/
+
+services:
+  page-dev:
+    <<: *base_page_setup
+    command: bash -c 'yarn install && yarn dev'
+    ports:
+      - '3000:3000'
+
+  page-build:
+    <<: *base_page_setup
+    command: bash -c 'yarn install && yarn build'
