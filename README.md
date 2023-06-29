@@ -8,6 +8,18 @@ yarn add @ifrc-go/icons
 npm install @ifrc-go/icons
 ```
 
+## Gh Pages
+Dev
+```
+docker-compose up page-dev
+```
+
+Build
+```
+docker-compose up page-build
+```
+> WHY? next will use icons configuration which can cause issue
+
 ## Usage
 
 Each icon can be imported as a react component.
