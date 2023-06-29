@@ -1,0 +1,18 @@
+{
+    "root": true,
+    "extends": [
+        "airbnb",
+        "airbnb-typescript",
+        "next/core-web-vitals",
+        "plugin:tailwindcss/recommended"
+    ],
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },
+    "rules": {
+        "indent": ["error", 4],
+        "react/jsx-indent": [2, 4],
+        "react/jsx-indent-props": [2, 4],
+        "@typescript-eslint/indent": [ "error", 4]
+    }
+}

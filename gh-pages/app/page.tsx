@@ -1,25 +1,26 @@
-"use client";
-const icons = require('@ifrc-go/icons');
-const pkg = require('package.json');
+'use client';
 
 import toast, { Toaster } from 'react-hot-toast';
+
+import { useState, useCallback, ElementType } from 'react';
 import SadFaceIcon from './svg/sadface.svg';
 import GoIcon from './svg/logo.svg';
 import DotIcon from './svg/dot.svg';
 import SearchIcon from './svg/search.svg';
 import { useDebounce } from './useDebounce';
 
-import { useState, useCallback, ElementType } from 'react';
+const icons = require('@ifrc-go/icons');
+const pkg = require('package.json');
 
 function Icons({ search }: { search: string }) {
     const filteredIcons: Record<string, ElementType> = search.length > 1 ? Object.keys(icons)
-    .filter(key => key.match(new RegExp(search, "i")))
-    .reduce((acc, key) => {
-        acc[key] = icons[key];
-        return acc;
-    }, {} as Record<string, ElementType>) : icons;
+        .filter((key) => key.match(new RegExp(search, 'i')))
+        .reduce((acc, key) => {
+            acc[key] = icons[key];
+            return acc;
+        }, {} as Record<string, ElementType>) : icons;
 
-    const [selectedIcon, setSelectedIcon]  = useState<string>();
+    const [selectedIcon, setSelectedIcon] = useState<string>();
 
     const handleIconClick = useCallback((value: string) => {
         navigator.clipboard.writeText(value);
@@ -30,32 +31,39 @@ function Icons({ search }: { search: string }) {
     if (search && Object.keys(filteredIcons).length === 0) {
         return (
             <div className="flex flex-col items-center py-20 text-sm
-                leading-6 text-slate-600 md:py-24 lg:py-32">
+                leading-6 text-slate-600 md:py-24 lg:py-32"
+            >
                 <SadFaceIcon className="h-8" />
                 <p className="mt-6">
-                    Sorry! we don’t have icons for{' '}
-                    <span className="font-semibold text-slate-900">{`“${search}”`}</span>.
+                    Sorry! we don’t have icons for
+                    {' '}
+                    <span className="font-semibold text-slate-900">{`“${search}”`}</span>
+                    .
                 </p>
             </div>
-        )
+        );
     }
 
     return (
         <div className="grid grid-cols-[repeat(auto-fill,minmax(8rem,1fr))]
-            gap-6 pb-16 pt-10">
+            gap-6 pb-16 pt-10"
+        >
             {Object.entries(filteredIcons).map(([key, Component]) => (
-                <div className={`mx-auto cursor-pointer rounded-lg p-6 text-3xl text-slate-900
+                <div
+                    className={`mx-auto cursor-pointer rounded-lg p-6 text-3xl text-slate-900
                         hover:shadow-md ${key === selectedIcon ? 'bg-slate-100' : 'bg-white'}`}
                     role="button"
                     aria-label={key}
                     key={key}
                     onClick={() => handleIconClick(key)}
+                    onKeyDown={() => handleIconClick(key)}
+                    tabIndex={0}
                 >
                     <Component />
                 </div>
             ))}
         </div>
-    )
+    );
 }
 
 function Header() {
@@ -97,7 +105,7 @@ function Header() {
                 </div>
             </div>
         </header>
-    )
+    );
 }
 
 export default function App() {
@@ -109,7 +117,8 @@ export default function App() {
             <Header />
             <main className="relative flex grow flex-col">
                 <div className="container mx-auto flex max-w-7xl flex-col
-                    px-4 sm:flex-row sm:items-center sm:px-6 lg:px-8">
+                    px-4 sm:flex-row sm:items-center sm:px-6 lg:px-8"
+                >
                     <div className="relative inset-0 flex-auto shadow-[inset_0_-1px_0_rgba(22,27,59,0.04)]">
                         <input
                             type="search"
@@ -125,7 +134,8 @@ export default function App() {
                                 [&::-webkit-search-results-decoration]:appearance-none"
                         />
                         <SearchIcon className="pointer-events-none absolute inset-y-0
-                            left-0 h-full w-5 fill-slate-500 transition" />
+                            left-0 h-full w-5 fill-slate-500 transition"
+                        />
                     </div>
                 </div>
                 <div className="container mx-auto max-w-7xl grow px-4 sm:px-6 lg:px-8">
@@ -133,7 +143,8 @@ export default function App() {
                 </div>
                 <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <footer className="flex max-w-7xl flex-col items-center gap-10 border-t
-                        border-slate-400/20 pb-20 pt-10 sm:flex-row">
+                        border-slate-400/20 pb-20 pt-10 sm:flex-row"
+                    >
                         <p className="flex items-center gap-3 text-sm leading-6 text-slate-900">
                             <GoIcon className="h-8" />
                             <span>
@@ -148,17 +159,19 @@ export default function App() {
                     </footer>
                 </div>
             </main>
-            <Toaster position="bottom-center" containerStyle={{
-                position: 'sticky',
-                bottom: '2.5rem',
-            }}
+            <Toaster
+                position="bottom-center"
+                containerStyle={{
+                    position: 'sticky',
+                    bottom: '2.5rem',
+                }}
                 toastOptions={{
                     style: {
-                        maxWidth: 500
-                    }
+                        maxWidth: 500,
+                    },
                 }}
             />
 
         </div>
-    )
+    );
 }
