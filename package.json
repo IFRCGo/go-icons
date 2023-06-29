@@ -1,6 +1,6 @@
 {
     "name": "@ifrc-go/icons",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "description": "IFRC-GO icons library for React.",
     "keywords": [
         "ifrc-go",
