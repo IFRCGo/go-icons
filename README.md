@@ -1,4 +1,4 @@
-## IFRC-GO Icons ![npm (scoped)](https://img.shields.io/npm/v/@ifrc-go/icons)
+## IFRC-GO Icons ![npm (scoped)](https://img.shields.io/npm/v/@ifrc-go/icons) [![Build](https://github.com/IFRCGo/go-icons/actions/workflows/ci.yml/badge.svg)](https://github.com/IFRCGo/go-icons/actions/workflows/ci.yml) [![Release & Publish](https://github.com/IFRCGo/go-icons/actions/workflows/release.yml/badge.svg)](https://github.com/IFRCGo/go-icons/actions/workflows/release.yml)
 React icons for [IFRC-GO](https://github.com/IFRCGo/) project.
 
 ## Installation
@@ -8,17 +8,16 @@ yarn add @ifrc-go/icons
 npm install @ifrc-go/icons
 ```
 
-## Gh Pages
-Dev
+## GitHub Pages
+For local development
 ```
 docker-compose up page-dev
 ```
 
-Build
+For building the NextJS project
 ```
 docker-compose up page-build
 ```
-> WHY? next will use icons configuration which can cause issue
 
 ## Usage
 
