@@ -21,7 +21,7 @@ const getReactComponent = async (svg: string, componentName: string, format: For
         {
             icon: true,
             titleProp: true,
-            plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx'],
+            plugins: ['@svgr/plugin-jsx'], // FIXME: @svgr/plugin-svgo is not used as it doesn't provide unique prefix ids
         },
         { componentName },
     );
