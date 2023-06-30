@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-    <g clip-path="url(#a)">
-        <path d="M18.154 19.569A9 9 0 0 1 5.432 6.845L1.393 2.808l1.415-1.415 19.8 19.8-1.416 1.415-3.038-3.04ZM6.847 8.261a7 7 0 0 0 9.891 9.89l-9.89-9.89Zm13.567 7.939-1.599-1.6a6.995 6.995 0 0 0-1.865-6.55L12 3.101 9.657 5.442 8.243 4.03 12 .272l6.364 6.364a9.002 9.002 0 0 1 2.05 9.565Z"/>
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+    <g clip-path="url(#blur-off-line_svg__a)">
+        <path d="M18.154 19.569A9 9 0 0 1 5.432 6.845L1.393 2.808l1.415-1.415 19.8 19.8-1.416 1.415-3.038-3.04ZM6.847 8.261a7 7 0 0 0 9.891 9.89l-9.89-9.89ZM20.414 16.2l-1.599-1.6a6.995 6.995 0 0 0-1.865-6.55L12 3.101 9.657 5.442 8.243 4.03 12 .272l6.364 6.364a9.002 9.002 0 0 1 2.05 9.565Z"/>
     </g>
     <defs>
-        <clipPath id="a">
+        <clipPath id="blur-off-line_svg__a">
             <path d="M0 0h24v24H0z"/>
         </clipPath>
     </defs>

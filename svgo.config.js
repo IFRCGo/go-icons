@@ -7,6 +7,9 @@ module.exports = {
       name: 'removeDimensions',
     },
     {
+        name: 'prefixIds',
+    },
+    {
       name: 'removeAttrs',
       params: {
         attrs: '(stroke|fill)',

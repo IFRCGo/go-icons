@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
-    <g clip-path="url(#a)">
+    <g clip-path="url(#subtract-line_svg__a)">
         <path d="M5 11h14v2H5v-2Z"/>
     </g>
     <defs>
-        <clipPath id="a">
+        <clipPath id="subtract-line_svg__a">
             <path d="M0 0h24v24H0z"/>
         </clipPath>
     </defs>

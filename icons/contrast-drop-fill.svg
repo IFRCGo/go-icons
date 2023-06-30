@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-    <g clip-path="url(#a)">
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+    <g clip-path="url(#contrast-drop-fill_svg__a)">
         <path d="M5.636 6.636 12 .272l6.364 6.364a9 9 0 1 1-12.728 0ZM7.05 8.05A7 7 0 0 0 12.004 20L12 3.1 7.05 8.05Z"/>
     </g>
     <defs>
-        <clipPath id="a">
+        <clipPath id="contrast-drop-fill_svg__a">
             <path d="M0 0h24v24H0z"/>
         </clipPath>
     </defs>

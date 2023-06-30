@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
-    <g clip-path="url(#a)">
+    <g clip-path="url(#check-double-fill_svg__a)">
         <path d="m11.602 13.76 1.412 1.412 8.466-8.466 1.414 1.414-9.88 9.88-6.364-6.364 1.414-1.414 2.125 2.125 1.413 1.412Zm.002-2.829 4.952-4.952 1.41 1.41-4.952 4.952-1.41-1.41Zm-2.827 5.656L7.364 18 1 11.636l1.414-1.414 1.413 1.412-.001.002 4.951 4.95Z"/>
     </g>
     <defs>
-        <clipPath id="a">
+        <clipPath id="check-double-fill_svg__a">
             <path d="M0 0h24v24H0z"/>
         </clipPath>
     </defs>

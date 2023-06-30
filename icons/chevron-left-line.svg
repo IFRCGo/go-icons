@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
-    <g clip-path="url(#a)">
+    <g clip-path="url(#chevron-left-line_svg__a)">
         <path d="M11.05 12 16 7.05l-1.413-1.414L8.223 12l6.364 6.364L16 16.95 11.05 12Z"/>
     </g>
     <defs>
-        <clipPath id="a">
+        <clipPath id="chevron-left-line_svg__a">
             <path d="M0 24h24V0H0z"/>
         </clipPath>
     </defs>

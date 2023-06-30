@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-    <g clip-path="url(#a)">
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+    <g clip-path="url(#layout-five-fill_svg__a)">
         <path d="M7 10v11H3a1 1 0 0 1-1-1V10h5Zm15 0v10a1 1 0 0 1-1 1H9V10h13Zm-1-7a1 1 0 0 1 1 1v4H2V4a1 1 0 0 1 1-1h18Z"/>
     </g>
     <defs>
-        <clipPath id="a">
+        <clipPath id="layout-five-fill_svg__a">
             <path d="M0 0h24v24H0z"/>
         </clipPath>
     </defs>

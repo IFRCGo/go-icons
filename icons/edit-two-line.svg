@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-    <g clip-path="url(#a)">
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+    <g clip-path="url(#edit-two-line_svg__a)">
         <path d="M5 19h1.414l9.314-9.314-1.414-1.414L5 17.586V19Zm16 2H3v-4.243L16.435 3.322a1 1 0 0 1 1.414 0l2.829 2.83a1 1 0 0 1 0 1.413L9.243 19H21v2ZM15.728 6.858l1.414 1.414 1.414-1.414-1.414-1.414-1.414 1.414Z"/>
     </g>
     <defs>
-        <clipPath id="a">
+        <clipPath id="edit-two-line_svg__a">
             <path d="M0 0h24v24H0z"/>
         </clipPath>
     </defs>

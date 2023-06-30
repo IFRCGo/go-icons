@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
-    <g clip-path="url(#a)">
+    <g clip-path="url(#star-fill_svg__a)">
         <path d="m12 18.26-7.053 3.948 1.575-7.928L.587 8.792l8.027-.952L12 .5l3.386 7.34 8.027.952-5.935 5.488 1.575 7.928L12 18.26Z"/>
     </g>
     <defs>
-        <clipPath id="a">
+        <clipPath id="star-fill_svg__a">
             <path d="M0 0h24v24H0z"/>
         </clipPath>
     </defs>

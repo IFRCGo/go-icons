@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-    <g clip-path="url(#a)">
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor">
+    <g clip-path="url(#earthquake_svg__a)">
         <path d="M17.591 10.297 12.197 5.22a.29.29 0 0 0-.394 0l-5.394 5.077a.375.375 0 0 0-.123.28v7.994a.287.287 0 0 0 .285.286h3.766l2.546-2.549-2.409-2.168a.57.57 0 0 1 .012-.86l1.531-1.312-.991-.994a.564.564 0 0 1 0-.806l1.143-1.143a.57.57 0 0 1 .805.806l-.737.74 1.023 1.026a.566.566 0 0 1-.031.837l-1.506 1.291 2.374 2.135a.57.57 0 0 1 .02.828l-2.169 2.169h5.48a.287.287 0 0 0 .286-.286v-7.994a.374.374 0 0 0-.123-.28Z"/>
     </g>
     <defs>
-        <clipPath id="a">
+        <clipPath id="earthquake_svg__a">
             <path d="M4 4h16v16H4z"/>
         </clipPath>
     </defs>
