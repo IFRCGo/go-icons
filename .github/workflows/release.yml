@@ -34,6 +34,15 @@ jobs:
           node-version: 16
           cache: yarn
 
+      - name: Check package version is up to date in gh-pages
+        run: |
+          PACKAGE_VERSION=`cat package.json | grep version | grep -oP "(\d+\.)?(\d+\.)?(\*|\d+)"`
+          PACKAGE_VERSION_IN_GH_PAGE=`cat gh-pages/package.json | grep '@ifrc-go/icons' | grep -oP "(\d+\.)?(\d+\.)?(\*|\d+)"`
+          [[ "$PACKAGE_VERSION" == "$PACKAGE_VERSION_IN_GH_PAGE" ]] || {
+              echo 'Make sure gh-pages is using the latest release version';
+              exit 1;
+          }
+
       - name: Install
         run: yarn install
 
