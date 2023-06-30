@@ -24,7 +24,7 @@ function Icons({ search }: { search: string }) {
 
     const handleIconClick = useCallback((value: string) => {
         navigator.clipboard.writeText(value);
-        toast(`Copied ${value} to clipboard`);
+        toast(`Copied ${value} to clipboard`, { id: 'clipboard' });
         setSelectedIcon(value);
     }, []);
 
@@ -56,7 +56,12 @@ function Icons({ search }: { search: string }) {
                     aria-label={key}
                     key={key}
                     onClick={() => handleIconClick(key)}
-                    onKeyDown={() => handleIconClick(key)}
+                    onKeyDown={(event) => {
+                        if (event.code === 'Space' || event.code === 'Enter') {
+                            event.preventDefault();
+                            handleIconClick(key);
+                        }
+                    }}
                     tabIndex={0}
                 >
                     <Component />
