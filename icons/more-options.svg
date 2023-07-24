@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56" aria-hidden="true" fill="currentColor">
+    <g clip-path="url(#more-options_svg__a)">
+        <path d="M28 14a5 5 0 1 0 0-10 5 5 0 0 0 0 10ZM28 33a5 5 0 1 0 0-10 5 5 0 0 0 0 10ZM28 52a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"/>
+    </g>
+    <defs>
+        <clipPath id="more-options_svg__a">
+            <path d="M0 0h56v56H0z"/>
+        </clipPath>
+    </defs>
+</svg>
