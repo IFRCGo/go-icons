@@ -91,14 +91,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Wait for npm package to be available
+        run: |
+          PACKAGE_NAME="@ifrc-go/icons"
+          PACKAGE_VERSION=$(cat package.json | grep version | grep -oP "(\d+\.)?(\d+\.)?(\*|\d+)")
+
+          # Loop until the package is available in the registry
+          while [[ -z $(npm show "$PACKAGE_NAME@$PACKAGE_VERSION" version) ]]; do
+            echo "Waiting for npm package to be available..."
+            sleep 20  # Adjust the interval as needed
+          done
+          echo "npm package is available!"
+
       - name: Install + Build
         run: docker-compose up page-build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: gh-pages/out
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
