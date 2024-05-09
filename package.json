@@ -32,7 +32,7 @@
     "scripts": {
         "prepack": "yarn build",
         "build": "rimraf ./dist && rimraf ./build && tsc && node ./build/build.js",
-        "optimize": "svgo --config=svgo.config.js -f ./icons -o ./icons-optimized --pretty --indent=4"
+        "optimize": "svgo --config=svgo.config.js -f ./new -o ./icons-optimized --pretty --indent=4"
     },
     "peerDependencies": {
         "react": ">= 16"
